@@ -27,7 +27,7 @@ This library can be used with [Promises/A+][promises] or with node-style callbac
         .catch(console.error);
     
     // error-first, node-style callback
-    captora.widget.download(url, callback(err, html) {
+    captora.widget.download(url, function (err, html) {
     
         if (err) {
             throw err;
