@@ -1,4 +1,12 @@
 const http = require("https");
+const HttpsProxyAgent = require('https-proxy-agent');
+
+var agent;
+const proxy = process.env.npm_config_https_proxy || process.env.npm_config_proxy || process.env.HTTPS_PROXY || process.env.HTTP_PROXY;
+if (proxy) {
+    agent = new HttpsProxyAgent(proxy);
+}
+
 
 // pull in customer specific values from environment variables
 let key = process.env.CAPTORA_API_KEY;
@@ -57,6 +65,7 @@ function download (url, callback) {
 			"protocol": "https:",
 			"host": "widgets.captora.com",
 			"path": `/wserver?key=${key}&domain=${domain}&url=${url}`,
+			"agent": agent,
 			"timeout": 10000 //ms
 		}, (res) => {
 

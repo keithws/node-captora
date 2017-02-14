@@ -37,7 +37,29 @@ This library can be used with [Promises/A+][promises] or with node-style callbac
     });
 ```
 
+
+## Usage with a Proxy
+
+To proxy HTTP(S) requests, then set the appropriate npm config variables.
+
+```shell
+npm config set https-proxy http://proxy.example.com:3128/
+npm config set proxy http://proxy.example.com:3128/
+```
+
+If the npm config variables are not found, then these environment variables will be used.
+
+```shell
+HTTPS_PROXY=http://proxy.example.com:3128/
+HTTP_PROXY=http://proxy.example.com:3128/
+```
+
+
 ## Change log
+
+_v1.1.0 — February 13, 2017_
+
+* added support HTTP(S) proxy
 
 _v1.0.0 — February 6, 2017_
 

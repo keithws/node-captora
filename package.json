@@ -1,6 +1,6 @@
 {
   "name": "captora",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "JavaScript library for Captora's API (node)",
   "main": "index.js",
   "scripts": {
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/keithws/node-captora/issues"
   },
-  "homepage": "https://github.com/keithws/node-captora#readme"
+  "homepage": "https://github.com/keithws/node-captora#readme",
+  "dependencies": {
+    "https-proxy-agent": "^1.0.0"
+  }
 }
